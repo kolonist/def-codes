@@ -211,7 +211,7 @@ number              , russian, return
 
 ## `extract(str, options = {})`
 Extract all phone numbers from string `str` in array. \
-Phone numbers will be handled with `normalize()` function automatically so you don't need to do it manually after extract.
+Phone numbers will be handled with [normalize](#normalizenumber-russian--false) function automatically so you don't need to do it manually after extract.
 
 ### Parameters
 **str** \
@@ -225,7 +225,7 @@ Phone numbers will be handled with `normalize()` function automatically so you d
     min_length: 3
 }
 ```
-`russian` tells whether function need assume numbers as russian (see `[normalize](#normalizenumberrussianfalse)` docs)). Default `false`.
+`russian` tells whether function need assume numbers as russian (see [normalize](#normalizenumber-russian--false) docs)). Default `false`.
 
 `min_length` is minimal length of digit sequense to assume it as phone number. Default `3`.
 
@@ -238,7 +238,7 @@ Information about DEF and MNP awailable only for russian numbers.
 
 ### Parameters
 **number** \
-`string`. Phone number with country code prevoiusly formatted with `[normalize](#normalizenumberrussianfalse)` function.
+`string`. Phone number with country code prevoiusly formatted with [normalize](#normalizenumber-russian--false) function.
 
 ### Return
 `Object` with information about number. Countains following fields:
