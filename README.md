@@ -104,11 +104,11 @@ test();
 ```
 
 # Documentation
-- [init]      (#initoptions)
-- [update]    (#updateconfig)
-- [normalize] (#normalizenumberrussianfalse)
-- [extract]   (#extractstroptions)
-- [info]      (#infonumber)
+- [init](#initoptions)
+- [update](#updateconfig)
+- [normalize](#normalizenumber-russian--false)
+- [extract](#extractstr-options--)
+- [info](#infonumber)
 
 ## `init(options)`
 Initialize library with database connection credentials. You can use `info()` only after initializing library.
@@ -218,7 +218,7 @@ Phone numbers will be handled with `normalize()` function automatically so you d
 `string`. Text to extract phone numbers from. Function is fast and nonblocking so string can be quite long and contain tens of thousands numbers.
 
 **options** \
-`Object`. Can contain following fields: \
+`Object`. Can contain following fields:
 ```JavaScript
 {
     russian   : false,
@@ -252,6 +252,6 @@ Information about DEF and MNP awailable only for russian numbers.
 
 ***
 
-@license MIT<br>
-@version 1.0.0<br>
+@license MIT
+@version 1.0.0
 @author Alexander Zubakov <developer@xinit.ru>
