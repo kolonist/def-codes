@@ -174,42 +174,42 @@ Default `false`.
 
 ### Example
 Numbers converted in the following way:
-```csv
-number              , russian, return
-'007-495-1234567'   , true   , '74951234567'
-'+7 (123) 456-78-90', true   , '71234567890'
-'+71234567890'      , true   , '71234567890'
-'8-499-123-45-67'   , true   , '74991234567'
-'8-800-123-45-67'   , true   , '78001234567'
-'8-903-123-45-67'   , true   , '79031234567'
-'8 495 123-45-67'   , true   , '74951234567'
-'8 (495) 123-45-67' , true   , '74951234567'
-'8(495)123-45-67'   , true   , '74951234567'
-'(495)1234567'      , true   , '74951234567'
-'7104951234567'     , false  , '7104951234567'
-'+7-495-1234567'    , true   , '74951234567'
-'(81235)5-6789'     , true   , '78123556789'
-'+1.495-123 4567'   , false  , '14951234567'
-'903-123-45-67'     , true   , '79031234567'
-'9031234567'        , true   , '79031234567'
-'79031234567'       , true   , '79031234567'
-'(903)123-45-67'    , true   , '79031234567'
-'8(903)1234567'     , true   , '79031234567'
-'+7(903)123 4567'   , true   , '79031234567'
-'+7(903)'           , true   , '7903'
-'8(903)'            , true   , '7903'
-'+8(903)'           , true   , '8903'
-'008(903)'          , true   , '8903'
-'903'               , true   , '7903'
-'+903'              , true   , '903'
-'00903'             , true   , '903'
-'+7(903)'           , false  , '7903'
-'8(903)'            , false  , '8903'
-'903'               , false  , '903'
-```
+
+| number              | russian | return
+|:--------------------|:--------|:------------
+| 007-495-1234567     | true    | 74951234567
+| +7 (123) 456-78-90  | true    | 71234567890
+| +71234567890        | true    | 71234567890
+| 8-499-123-45-67     | true    | 74991234567
+| 8-800-123-45-67     | true    | 78001234567
+| 8-903-123-45-67     | true    | 79031234567
+| 8 495 123-45-67     | true    | 74951234567
+| 8 (495) 123-45-67   | true    | 74951234567
+| 8(495)123-45-67     | true    | 74951234567
+| (495)1234567        | true    | 74951234567
+| 7104951234567       | false   | 7104951234567
+| +7-495-1234567      | true    | 74951234567
+| (81235)5-6789       | true    | 78123556789
+| +1.495-123 4567     | false   | 14951234567
+| 903-123-45-67       | true    | 79031234567
+| 9031234567          | true    | 79031234567
+| 79031234567         | true    | 79031234567
+| (903)123-45-67      | true    | 79031234567
+| 8(903)1234567       | true    | 79031234567
+| +7(903)123 4567     | true    | 79031234567
+| +7(903)             | true    | 7903
+| 8(903)              | true    | 7903
+| +8(903)             | true    | 8903
+| 008(903)            | true    | 8903
+| 903                 | true    | 7903
+| +903                | true    | 903
+| 00903               | true    | 903
+| +7(903)             | false   | 7903
+| 8(903)              | false   | 8903
+| 903                 | false   | 903
 
 
-## `extract(str, options = {})`
+## `extrt(str, options = {})`
 Extract all phone numbers from string `str` in array. \
 Phone numbers will be handled with [normalize](#normalizenumber-russian--false) function automatically so you don't need to do it manually after extract.
 
@@ -225,7 +225,7 @@ Phone numbers will be handled with [normalize](#normalizenumber-russian--false) 
     min_length: 3
 }
 ```
-`russian` tells whether function need assume numbers as russian (see [normalize](#normalizenumber-russian--false) docs)). Default `false`.
+`russian` tells whether function need assume numbers as russian (see [normalize](#normalizenumber-russian--false) docs). Default `false`.
 
 `min_length` is minimal length of digit sequense to assume it as phone number. Default `3`.
 
@@ -248,7 +248,7 @@ Information about DEF and MNP awailable only for russian numbers.
     def: [{code, begin, end, provider, region}],
     mnp: [{owner, mnc, region, portdate, donor, oldmnc}]
 }
-
+```
 
 ***
 
