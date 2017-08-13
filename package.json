@@ -1,0 +1,46 @@
+{
+    "name": "def-codes",
+    "version": "0.0.1",
+    "description": "Country, DEF and ABC codes, MNP (Mobile Number Portability). Define provider by phone or its first digits using offline country codes base collected by Developer (free of charge), DEF-base from https://www.rossvyaz.ru/opendata/ and offline MNP base from http://www.zniis.ru/bdpn/check",
+    "author": "Alexander Zubakov <developer@xinit.ru>",
+    "license": "MIT",
+    "keywords": [
+        "def",
+        "abc",
+        "mnp",
+        "mobile",
+        "number",
+        "number portability",
+        "def code",
+        "abc code",
+        "mnp code",
+        "codes",
+        "phone",
+        "phone codes",
+        "phone nombers",
+        "country codes",
+        "country phones",
+        "country phone codes"
+    ],
+    "main": "./lib/def.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kolonist/def-codes"
+    },
+    "scripts": {
+        "test": "mocha test/index.js"
+    },
+    "dependencies": {
+        "csv-parse": "latest",
+        "jszip": "latest",
+        "mysql": "latest",
+        "ssh2": "latest",
+        "stream-transform": "latest",
+        "request": "latest"
+    },
+    "devDependencies": {
+        "eslint": "latest",
+        "eslint-config-google": "latest",
+        "mocha": "latest"
+    }
+}
