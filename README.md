@@ -28,75 +28,75 @@ const test = async () => {
     // international number
     await def.info(def.normalize('+7 920 065-46-89'));
     /*
-        result:
-        {
-            "country_codes": {
-                "code": "7",
-                "country": "Russia / Kazakhstan"
-            },
-            "def": [
-                {
-                    "code": "920",
-                    "begin": "0000000",
-                    "end": "0799999",
-                    "provider": "ПАО \"МегаФон\"",
-                    "region": "Нижегородская обл."
-                }
-            ],
-            "mnp": [
-                {
-                    "owner": "\"ВымпелКом\" ПАО",
-                    "mnc": "99",
-                    "region": "Нижегородская область",
-                    "portdate": "2015-12-22T22:12:04.000Z",
-                    "donor": "\"МегаФон\" ПАО",
-                    "oldmnc": ""
-                }
-            ]
-        }
+    result:
+    {
+        "country_codes": {
+            "code": "7",
+            "country": "Russia / Kazakhstan"
+        },
+        "def": [
+            {
+                "code": "920",
+                "begin": "0000000",
+                "end": "0799999",
+                "provider": "ПАО \"МегаФон\"",
+                "region": "Нижегородская обл."
+            }
+        ],
+        "mnp": [
+            {
+                "owner": "\"ВымпелКом\" ПАО",
+                "mnc": "99",
+                "region": "Нижегородская область",
+                "portdate": "2015-12-22T22:12:04.000Z",
+                "donor": "\"МегаФон\" ПАО",
+                "oldmnc": ""
+            }
+        ]
+    }
     */
 
     // russian number without country code
     await def.info(def.normalize('920 065-46-89', true));
     /*
-        result:
-        {
-            "country_codes": {
-                "code": "7",
-                "country": "Russia / Kazakhstan"
-            },
-            "def": [
-                {
-                    "code": "920",
-                    "begin": "0000000",
-                    "end": "0799999",
-                    "provider": "ПАО \"МегаФон\"",
-                    "region": "Нижегородская обл."
-                }
-            ],
-            "mnp": [
-                {
-                    "owner": "\"ВымпелКом\" ПАО",
-                    "mnc": "99",
-                    "region": "Нижегородская область",
-                    "portdate": "2015-12-22T22:12:04.000Z",
-                    "donor": "\"МегаФон\" ПАО",
-                    "oldmnc": ""
-                }
-            ]
-        }
+    result:
+    {
+        "country_codes": {
+            "code": "7",
+            "country": "Russia / Kazakhstan"
+        },
+        "def": [
+            {
+                "code": "920",
+                "begin": "0000000",
+                "end": "0799999",
+                "provider": "ПАО \"МегаФон\"",
+                "region": "Нижегородская обл."
+            }
+        ],
+        "mnp": [
+            {
+                "owner": "\"ВымпелКом\" ПАО",
+                "mnc": "99",
+                "region": "Нижегородская область",
+                "portdate": "2015-12-22T22:12:04.000Z",
+                "donor": "\"МегаФон\" ПАО",
+                "oldmnc": ""
+            }
+        ]
+    }
     */
 
     // compare result without knowledle that number belongs to Russia
     await def.info(def.normalize('920 065-46-89'));
     /*
-        result:
-        {
-            "country_codes": {
-                "code": "92",
-                "country": "Pakistan"
-            }
+    result:
+    {
+        "country_codes": {
+            "code": "92",
+            "country": "Pakistan"
         }
+    }
     */
 }
 
@@ -252,6 +252,6 @@ Information about DEF and MNP awailable only for russian numbers.
 
 ***
 
-@license MIT
-@version 1.0.0
+@license MIT \
+@version 1.0.0 \
 @author Alexander Zubakov <developer@xinit.ru>
