@@ -1,0 +1,20 @@
+{
+    "db": {
+        "socketPath": "/run/mysqld/mysqld.sock",
+        "user"      : "def",
+        "password"  : "def",
+        "database"  : "def"
+    },
+
+    "src": {
+        "dir"          : "/home/asterisk/shared/_def",
+        "mnp_regions"  : "regions.dump",
+        "country_codes": "codes.dump",
+        "mnp"          : "Port_All_Full.csv",
+        "operators"    : "Operators.csv",
+        "abc3"         : "Kody_ABC-3kh.csv",
+        "abc4"         : "Kody_ABC-4kh.csv",
+        "abc8"         : "Kody_ABC-8kh.csv",
+        "def"          : "Kody_DEF-9kh.csv"
+    }
+}

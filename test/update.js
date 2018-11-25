@@ -1,10 +1,7 @@
 'use strict';
-const util    = require('util');
-const fs      = require('fs');
-const path    = require('path');
-const ssh2    = require('ssh2');
-const jszip   = require('jszip');
-const request = require('request');
+const util = require('util');
+const fs   = require('fs');
+const path = require('path');
 
 
 /**
@@ -158,7 +155,7 @@ const downloadSFTP = (config, dir) => {
                 });
             });
         })
-        .connect({host, port, user, password});
+            .connect({host, port, user, password});
     });
 };
 
@@ -266,7 +263,7 @@ const updateMNP = async (conn, config) => {
     await Promise.all([
         loadTable(conn, SQL.MNP.LOAD_REGIONS , await copyFile(LOCAL_MNP_REGIONS)),
         loadTable(conn, SQL.MNP.LOAD_PROVIDER, await downloadFileFromSFTP(config, REMOTE_PROV_DIR)),
-        loadTable(conn, SQL.MNP.LOAD_MNP     , await downloadFileFromSFTP(config, REMOTE_MNP_DIR))
+        loadTable(conn, SQL.MNP.LOAD_MNP     , await downloadFileFromSFTP(config, REMOTE_MNP_DIR)),
     ]);
 };
 

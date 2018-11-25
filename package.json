@@ -1,6 +1,6 @@
 {
     "name": "def-codes",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Country, DEF and ABC codes, MNP (Mobile Number Portability). Define provider by phone or its first digits using offline country codes base collected by Developer (free of charge), DEF-base from https://www.rossvyaz.ru/opendata/ and offline MNP base from http://www.zniis.ru/bdpn/check",
     "author": "Alexander Zubakov <developer@xinit.ru>",
     "license": "MIT",
@@ -31,15 +31,15 @@
         "test": "mocha test/index.js"
     },
     "dependencies": {
-        "csv-parse": "latest",
+        "csv-parse": "^4.0.1",
         "jszip": "latest",
         "mysql": "latest",
+        "request": "latest",
         "ssh2": "latest",
-        "stream-transform": "latest",
-        "request": "latest"
+        "stream-transform": "latest"
     },
     "devDependencies": {
-        "eslint": "latest",
+        "eslint": "^5.9.0",
         "eslint-config-google": "latest",
         "mocha": "latest"
     }

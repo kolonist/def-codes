@@ -94,12 +94,13 @@ describe('extract numbers', () => {
 Телефон: 8 (4012)60-36-03, 8 (4012)60-26-02 , 8-911-463-63-01
 Телефон: 8 (4012) 359-444, 99-99-44
 Registrar Abuse Contact Phone: +1.2083895740
+Номера телефонов: дежурный 8-(4570)-452-073, телефон «горячей линии» 8-(4582)-742-693. Номера телефонов: Отдел по обеспечению деятельности антитеррористической комиссии области; 8-(2497)-429-425, т/ф. 254-809, 964-815.
     `;
 
     it('should properly extract all numbers from string', async () => {
         const numbers = await def.extract(str, {russian: true, min_len: 5});
 
-        assert.equal(numbers.length, 50);
+        assert.equal(numbers.length, 55);
 
         return Promise.resolve();
     });
@@ -110,6 +111,7 @@ Registrar Abuse Contact Phone: +1.2083895740
         const str = fs.readFileSync(path.join(__dirname, 'phones.txt'), {encoding: 'utf8'});
 
         const numbers = await def.extract(str, {russian: true, min_len: 5});
+        console.log('numbers:\n', JSON.stringify(numbers, null, 4));
 
         assert.equal(numbers.length, 50000);
 
@@ -122,12 +124,9 @@ describe('init connection', () => {
     it('should properly init', async function() {
         this.timeout(10000);
 
-        return await def.init({
-            socketPath: '/run/mysqld/mysqld.sock',
-            user      : 'xinit',
-            password  : 'password',
-            database  : 'xinit'
-        });
+        return await def.init(
+            require(path.join(__dirname, 'update_config.json')).db
+        );
     });
 });
 

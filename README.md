@@ -253,5 +253,5 @@ Information about DEF and MNP awailable only for russian numbers.
 ***
 
 @license MIT \
-@version 1.0.0 \
+@version 1.0.1 \
 @author Alexander Zubakov <developer@xinit.ru>
