@@ -1,6 +1,6 @@
 {
     "name": "def-codes",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Country, DEF and ABC codes, MNP (Mobile Number Portability). Define provider by phone or its first digits using offline country codes base collected by Developer (free of charge), DEF-base from https://www.rossvyaz.ru/opendata/ and offline MNP base from http://www.zniis.ru/bdpn/check",
     "author": "Alexander Zubakov <developer@xinit.ru>",
     "license": "MIT",
