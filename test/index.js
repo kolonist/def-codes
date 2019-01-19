@@ -8,7 +8,7 @@ const assert = require('assert');
 const def = require('./../lib/def');
 
 
-describe('normalize number', () => {
+describe('normalize number', function() {
     const numbers = [
         [''                  , ''             , true],
         [''                  , ''             , false],
@@ -44,7 +44,7 @@ describe('normalize number', () => {
         ['903'               , '903'          , false],
     ];
 
-    it('should properly normalize numbers', done => {
+    it('should properly normalize numbers', function(done) {
         for (let v of numbers) {
             assert.equal(def.normalize(v[0], v[2]), v[1], v[0]);
         }
@@ -54,7 +54,7 @@ describe('normalize number', () => {
 });
 
 
-describe('extract numbers', () => {
+describe('extract numbers', function() {
     const str = `
 007-495-1234567
     +7 (123) 456-78-90
@@ -97,12 +97,10 @@ Registrar Abuse Contact Phone: +1.2083895740
 Номера телефонов: дежурный 8-(4570)-452-073, телефон «горячей линии» 8-(4582)-742-693. Номера телефонов: Отдел по обеспечению деятельности антитеррористической комиссии области; 8-(2497)-429-425, т/ф. 254-809, 964-815.
     `;
 
-    it('should properly extract all numbers from string', async () => {
+    it('should properly extract all numbers from string', async function() {
         const numbers = await def.extract(str, {russian: true, min_len: 5});
 
         assert.equal(numbers.length, 55);
-
-        return Promise.resolve();
     });
 
     it('should properly extract all numbers from very large file', async function() {
@@ -111,29 +109,27 @@ Registrar Abuse Contact Phone: +1.2083895740
         const str = fs.readFileSync(path.join(__dirname, 'phones.txt'), {encoding: 'utf8'});
 
         const numbers = await def.extract(str, {russian: true, min_len: 5});
-        console.log('numbers:\n', JSON.stringify(numbers, null, 4));
 
         assert.equal(numbers.length, 50000);
-
-        return Promise.resolve();
     });
 });
 
 
-describe('init connection', () => {
+describe('init connection', function() {
     it('should properly init', async function() {
         this.timeout(10000);
 
-        return await def.init(
-            require(path.join(__dirname, 'update_config.json')).db
+        await def.init(
+            require(path.join(__dirname, 'update_config.json'))
         );
     });
 });
 
 
-describe('update databases', () => {
+describe('update databases', function() {
     it('should update DB', async function() {
         this.timeout(1200000);
+
         return await def.update(require(
             path.join(__dirname, '..', 'var', 'credentials.json')
         ));
@@ -141,7 +137,7 @@ describe('update databases', () => {
 });
 
 
-describe('get information about number', () => {
+describe('get information about number', function() {
     const numbers = [
         '79097875077',        '79114800117',        '79291660791',
         '79000000111',        '79000000060',        '74012603603',
@@ -164,9 +160,6 @@ describe('get information about number', () => {
 
         for (const number of numbers) {
             const info = await def.info(number);
-            console.log(`${number}:`, JSON.stringify(info, null, 4));
         }
-
-        return Promise.resolve();
     });
 });
